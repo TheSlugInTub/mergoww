@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mergoww</title>
+    <link rel="icon" type="image/x-icon" href="images/Executor.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --ctp-base: #1e1e2e;
+            --ctp-mantle: #181825;
+            --ctp-crust: #11111b;
+            --ctp-surface0: #313244;
+            --ctp-surface1: #45475a;
+            --ctp-text: #cdd6f4;
+            --ctp-subtext0: #a6adc8;
+            --ctp-blue: #89b4fa;
+            --ctp-lavender: #b4befe;
+            --ctp-header: #bb94ff;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: var(--ctp-base);
+            color: var(--ctp-text);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: var(--ctp-mantle);
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--ctp-surface0);
+            overflow-y: auto;
+        }
+
+        .icon-container {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--ctp-surface0);
+        }
+
+        .icon-container img {
+            width: 180px;
+            height: 180px;
+            border-radius: 8px;
+        }
+
+        .file-tree {
+            flex: 1;
+            padding: 15px 0;
+        }
+
+        .tree-header {
+            padding: 8px 20px;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--ctp-subtext0);
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .tree-item {
+            padding: 8px 20px;
+            cursor: pointer;
+            color: var(--ctp-text);
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+        }
+
+        .tree-item:hover {
+            background-color: var(--ctp-surface0);
+        }
+
+        .tree-item.active {
+            background-color: var(--ctp-surface0);
+            color: var(--ctp-blue);
+        }
+
+        .tree-item::before {
+            content: '├─';
+            margin-right: 8px;
+            color: var(--ctp-surface1);
+        }
+
+        .tree-item:last-of-type::before {
+            content: '└─';
+        }
+
+        .contact-section {
+            border-top: 1px solid var(--ctp-surface0);
+            padding: 15px 0;
+        }
+
+        .contact-item {
+            padding: 10px 20px;
+            cursor: pointer;
+            color: var(--ctp-text);
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-item:hover {
+            background-color: var(--ctp-surface0);
+        }
+
+        .contact-item::before {
+            content: '◉';
+            margin-right: 10px;
+            color: var(--ctp-lavender);
+            font-size: 10px;
+        }
+
+        .main-content {
+            flex: 1;
+            overflow-y: auto;
+            background-color: var(--ctp-base);
+        }
+        
+        .main-content-text {
+            padding: 40px;
+        }
+        
+        .main-content-text h1 {
+            color: var(--ctp-header);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2px;
+            padding: 0;
+        }
+
+        .gallery-item {
+            width: 100%;
+            aspect-ratio: 1;
+            overflow: hidden;
+            background-color: var(--ctp-surface0);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--ctp-mantle);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--ctp-surface0);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--ctp-surface1);
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="icon-container">
+            <img src="images/Executor.jpg" alt="Portfolio Icon">
+        </div>
+        
+        <div class="file-tree">
+            <a href="index.html"><div class="tree-item">gallery.html</div></a>
+            <a href="about.html"><div class="tree-item active">about.html</div></a>
+        </div>
+
+        <div class="contact-section">
+            <div class="tree-header">Contact</div>
+            <a href="mailto:mergomaximur@gmail.com"><div class="contact-item">Email</div></a>
+            <a href="https://github.com/TheSlugInTub"><div class="contact-item">GitHub</div></a>
+            <a href="https://bsky.app/profile/slugarius.bsky.social"><div class="contact-item">Bsky</div></a>
+            <a href="https://discord.com/users/1423295183805616149"><div class="contact-item">Discord</div></a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="main-content-text">
+            <h1># About me</h1>
+            <p style="margin-top: 10px;">Hello there! I'm Mergoww and I'm an artist. My works can be found in the gallery page.<br><br><br>I am open to commissions, if you would like to commission me, please read the commissions page and contact me on discord.</p>
+        </div>
+    </div>
+</body>
+</html>
